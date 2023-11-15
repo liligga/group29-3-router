@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import { paths } from "../App";
 
 const activeNavlink = ({ isActive }) => (isActive ? "active-navlink" : "");
 
@@ -7,17 +8,17 @@ const Navbar = () => {
     <nav>
       <ul>
         <li>
-          <NavLink to="/" className={activeNavlink}>
+          <NavLink to={paths.main} className={activeNavlink}>
             Main
           </NavLink>
         </li>
         <li>
-          <NavLink to="/posts" className={activeNavlink}>
+          <NavLink to={paths.posts} className={activeNavlink}>
             Posts
           </NavLink>
         </li>
         <li>
-          <NavLink to="/login" className={activeNavlink}>
+          <NavLink to={paths.login} className={activeNavlink}>
             Login
           </NavLink>
         </li>
