@@ -1,23 +1,33 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import axios from "axios";
 
 const PostsPage = () => {
-  const [posts, setPosts] = useState([])
+  const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/posts")
-      .then((response) => response.json())
-      .then((json) => setPosts(json))
-  }, [])
+    const getPosts = async () => {
+      const resp = await axios.get(
+        "https://jsonplaceholder.typicode.com/posts"
+      );
+      setPosts(resp.data);
+    };
+    getPosts();
+  }, []);
 
   return (
     <div>
       PostsPage
       <ul>
         {posts.map((post) => (
-          <li key={post.id}>{post.title}</li>
+          <li key={post.id}>
+            <p>
+              <Link to={`/posts/${post.id}`}>{post.title}</Link> 
+            </p>
+          </li>
         ))}
       </ul>
     </div>
-  )
-}
-export default PostsPage
+  );
+};
+export default PostsPage;

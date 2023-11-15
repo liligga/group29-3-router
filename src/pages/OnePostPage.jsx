@@ -1,10 +1,14 @@
-import { useParams } from "react-router-dom"
+import { useParams, useNavigate } from "react-router-dom"
 
 const OnePostPage = () => {
   const { id } = useParams()
- 
+  const navigate = useNavigate()
+
   return (
-    <div>OnePostPage ID: {id}</div>
+    <div>
+      <p>OnePostPage ID: {id}</p>
+      <button onClick={() => navigate(-1)}>Go Back</button>
+    </div>
   )
 }
 export default OnePostPage
