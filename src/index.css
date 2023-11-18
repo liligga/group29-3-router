@@ -26,9 +26,15 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  place-items: center;
+  /* place-items: center; */
   min-width: 320px;
   min-height: 100vh;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 h1 {
@@ -59,6 +65,11 @@ ul {
   list-style: none;
 }
 
+nav ul {
+  display: flex;
+  gap: 2rem;
+}
+
 nav a.active-navlink {
   color: red;
 }
@@ -75,5 +86,3 @@ nav a.active-navlink {
     background-color: #f9f9f9;
   }
 }
-
-

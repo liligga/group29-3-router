@@ -7,6 +7,7 @@ import OnePostPage from "./pages/OnePostPage";
 import Layout from "./components/Layout";
 import LoginPage from "./pages/LoginPage";
 import ProfilePage from "./pages/ProfilePage";
+import ParentPage from "./pages/ParentPage";
 import PrivatePath from "./components/PrivatePath";
 
 export const paths = {
@@ -23,6 +24,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<MainPage />} />
+          <Route path="parent" element={<ParentPage />} />
           <Route element={<PrivatePath />}>
             <Route path="posts" element={<PostsPage />} />
             <Route path="posts/:id" element={<OnePostPage />} />
