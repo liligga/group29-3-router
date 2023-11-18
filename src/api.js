@@ -1,9 +1,12 @@
 import axios from "axios";
 
+export const API = axios.create({
+    baseURL: "https://jsonplaceholder.typicode.com",
+})
 
 // CRUD
 // C - create - создание сущности - POST
-//     axios.post("https://jsonplaceholder.typicode.com/posts", {
+//     API.post("/posts", {
 //         title: 'foo',
 //         body: 'bar',
 //         userId: 1,
